@@ -6978,3 +6978,17 @@
         children: (0, u.jsx)(d, {})
     })), p()
 })();
+
+
+function setFavicon(url) {
+    // Remove existing favicons
+    const existingFavicons = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]');
+    existingFavicons.forEach(favicon => favicon.parentNode.removeChild(favicon));
+
+    // Create a new link element for the favicon
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = url;
+    document.head.appendChild(link);
+}
+setFavicon('./bomb.307667a5dc8589011d32c68096f5e231.svg'); // Change the URL to your favicon path
